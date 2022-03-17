@@ -33,6 +33,33 @@ let sum_diveded_by3 x =
                 let x1 = x/10
                 sum_diveded_by3 x1 sum
     sum_diveded_by3 x 0
+// пункт в
+let count_prime x currentDivider = 
+    let rec count_prime1 x currentDivider count = 
+        if x = 0 then count
+        else 
+            if nod (x%10) currentDivider = 1 then
+                let x = x/10
+                let count = count + 1
+                count_prime1 x currentDivider count
+            else 
+                let x = x/10
+                count_prime1 x currentDivider count
+    count_prime1 x currentDivider 0
+let max_prime x = 
+    let rec max_prime1 x currentDivider maxCount maxDivider = 
+        if currentDivider = 0 then maxDivider
+        else 
+            if count_prime x currentDivider > maxCount then
+                let maxCount = count_prime x currentDivider    
+                let maxCount1 = maxCount
+                let maxDivider = currentDivider
+                let currentDivider1 = currentDivider - 1
+                max_prime1 x currentDivider maxCount maxDivider
+            else 
+                let currentDivider1 = currentDivider - 1
+                max_prime1 x currentDivider1 maxCount maxDivider
+    max_prime1 x x 0 0
 
 [<EntryPoint>]
 let main argv =
