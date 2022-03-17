@@ -20,9 +20,22 @@ let processing x f init =
     processing1 x f init x
 let euler x = 
     processing x (fun x y-> x + 1) 0
-
+// пункт б
+let sum_diveded_by3 x = 
+    let rec sum_diveded_by3 x sum = 
+        if x = 0 then sum
+        else
+            if x%10%3 = 0 then
+                let sum1 = sum + x%10
+                let x1 = x/10
+                sum_diveded_by3 x1 sum1
+            else 
+                let x1 = x/10
+                sum_diveded_by3 x1 sum
+    sum_diveded_by3 x 0
 
 [<EntryPoint>]
 let main argv =
     Console.WriteLine(euler 10)
+    Console.WriteLine(sum_diveded_by3 123456)
     0 
