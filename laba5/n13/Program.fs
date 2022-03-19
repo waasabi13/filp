@@ -41,7 +41,7 @@ let main argv =
     Console.WriteLine(pr_up x)
     //Console.WriteLine(pr_up x)
     Console.Write("Максимальная цифра числа: ")
-    Console.WriteLine(max_digitup x)
+    Console.WriteLine(max_digitdown x)
     Console.Write("Минимальная цифра числа: ")
     Console.WriteLine(min_digitdown x)
     0 // return an integer exit code
