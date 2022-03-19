@@ -39,4 +39,5 @@ let primes_pred x predicate func init =
 
 [<EntryPoint>]
 let main argv =
+    Console.WriteLine(primes_pred 15 (fun x->x%2=0) (fun x y->x+y)0)
     0
