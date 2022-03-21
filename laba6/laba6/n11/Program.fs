@@ -17,7 +17,7 @@ let sumlist a b c = (a+b)+c
 let modification (list:'int list)=
     let rec m1 list (resultlist:'int list) =
         match list with
-        | a::b::c::t-> m1 (list @ [sumlist a b c])
+        | a::b::c::t-> m1 t (resultlist @ [sumlist a b c])
         | a::b::[]->(resultlist @ [sumlist a b 1])
         | a::[]-> (resultlist @ [sumlist a 1 1])
         | []-> resultlist
