@@ -7,8 +7,7 @@ let rec readlist n =
     Head::Tail
 
 let rec writelist = function
-    [] ->   let z = System.Console.ReadKey()
-            0
+    [] -> ()
     | (head : int)::tail -> 
                        System.Console.WriteLine(head)
                        writelist tail
