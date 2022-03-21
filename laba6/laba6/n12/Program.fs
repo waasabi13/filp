@@ -1,4 +1,7 @@
-﻿open System
+﻿//1.38
+//Дан целочисленный массив и отрезок a..b. Необходимо найти
+//количество элементов, значение которых принадлежит этому отрезку.
+open System
 let procession list a b=
     let rec pr1 list a b count=
         match list with
