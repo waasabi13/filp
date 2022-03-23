@@ -11,7 +11,8 @@ let find_min list =
             let new_idx = current_idx + 1
             find_min_r t new_min new_min_idx new_idx
     find_min_r list list.Head 0 0
-let find_min2 list min2=
+
+let find_min2 list min2 =
     let rec find_min_r list min2 current_min min_idx current_idx =
         match list with
         | [] -> (min_idx, current_min)
