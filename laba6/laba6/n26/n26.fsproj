@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\n11\n11.fsproj" />
+    <ProjectReference Include="..\n_12\n_12.fsproj" />
   </ItemGroup>
 
 </Project>
