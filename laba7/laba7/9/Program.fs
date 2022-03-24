@@ -7,9 +7,15 @@ let method1()=
     let result=List.map2(fun ch1 ch2-> ch1<=ch2) srt_list.[0..srt_list.Length-2] srt_list.[1..srt_list.Length-1] 
     if (List.fold (fun s x-> if x=false then s+1 else s) 0 result) = 0 then Console.WriteLine("Все хорошо")
     else Console.WriteLine("Все плохо")
+let method2()=
+    Console.WriteLine("Введите строку: ")
+    let str= Console.ReadLine()
+    let a_str=String.filter(fun ch->ch='A') str
+    Console.WriteLine(a_str.Length)
 let choose n=
     match n with
     |"1"-> method1()
+    |"2"-> method2()
 
 [<EntryPoint>]
 let main argv =
