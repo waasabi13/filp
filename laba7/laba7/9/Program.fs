@@ -12,11 +12,26 @@ let method2()=
     let str= Console.ReadLine()
     let a_str=String.filter(fun ch->ch='A') str
     Console.WriteLine(a_str.Length)
+let method3()=
+    Console.WriteLine("Введите строку: ")
+    let str= Console.ReadLine()
+    let rec m1 (str: string) iter ind =
+        if (ind = -1) then str
+        else
+            if (str.[ind] = iter) then str.[(ind+1)..]
+            else m1 str iter (ind-1)
+    let rec m2 (str: string) iter ind =
+        if (ind = str.Length) then str
+        else
+            if (str.[ind] = iter) then str.[..(ind-1)]
+            else m2 str iter (ind+1)
+    let justFile = m1 str '\\' (str.Length-1)
+    m2 justFile '.' 0
 let choose n=
     match n with
-    |"1"-> method1()
-    |"2"-> method2()
-
+    |"1"-> method1
+    |"2"-> method2
+    |"3"->method3
 [<EntryPoint>]
 let main argv =
     Console.WriteLine("Выберите одну из трех предложенных программ:
