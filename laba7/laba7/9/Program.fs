@@ -26,12 +26,13 @@ let method3()=
             if (str.[ind] = iter) then str.[..(ind-1)]
             else m2 str iter (ind+1)
     let justFile = m1 str '\\' (str.Length-1)
-    m2 justFile '.' 0
+    m1 justFile '.' 0
+    Console.WriteLine(justFile)
 let choose n=
     match n with
-    |"1"-> method1
-    |"2"-> method2
-    |"3"->method3
+    |"1"-> method1()
+    |"2"-> method2()
+    |"3"->method3()
 [<EntryPoint>]
 let main argv =
     Console.WriteLine("Выберите одну из трех предложенных программ:
