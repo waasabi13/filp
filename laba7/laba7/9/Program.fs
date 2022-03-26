@@ -26,8 +26,8 @@ let method3()=
             if (int(str.[ind]) = iter) then str.[..(ind-1)]
             else m2 str iter (ind+1)
     let justFile = m1 str (int('\\')) (str.Length-1)
-    m2 justFile (int('.')) 0
-    Console.WriteLine(justFile)
+    let file=m2 justFile (int('.')) 0
+    Console.WriteLine(file)
 let choose n=
     match n with
     |"1"-> method1()
