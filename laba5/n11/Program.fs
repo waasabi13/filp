@@ -1,6 +1,7 @@
 ﻿open System
 
-let language = function
+let language n=
+    match n with
     | "f#" | "prolog" -> "Пoдлизa!"
     | "pascal" -> "Мое почтение, господин"
     | _ -> "Отличный выбор!"
@@ -8,6 +9,6 @@ let language = function
 [<EntryPoint>]
 let main argv =
     Console.WriteLine("Какoй твoй любимый язык?")
-    let s= Console.ReadLine().ToLower()
-    Console.WriteLine(language s)
+    let n= Console.ReadLine().ToLower()
+    Console.WriteLine(language n)
     0
