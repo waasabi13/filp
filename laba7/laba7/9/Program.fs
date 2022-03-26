@@ -18,15 +18,15 @@ let method3()=
     let rec m1 (str: string) iter ind =
         if (ind = -1) then str
         else
-            if (str.[ind] = iter) then str.[(ind+1)..]
+            if (int(str.[ind]) = iter) then str.[(ind+1)..]
             else m1 str iter (ind-1)
     let rec m2 (str: string) iter ind =
         if (ind = str.Length) then str
         else
-            if (str.[ind] = iter) then str.[..(ind-1)]
+            if (int(str.[ind]) = iter) then str.[..(ind-1)]
             else m2 str iter (ind+1)
-    let justFile = m1 str '\\' (str.Length-1)
-    m1 justFile '.' 0
+    let justFile = m1 str (int('\\')) (str.Length-1)
+    m2 justFile (int('.')) 0
     Console.WriteLine(justFile)
 let choose n=
     match n with
@@ -35,6 +35,7 @@ let choose n=
     |"3"->method3()
 [<EntryPoint>]
 let main argv =
+    Console.WriteLine(int('\\'));
     Console.WriteLine("Выберите одну из трех предложенных программ:
     1.Проверить, упорядочены ли строчные символы этой строки по возрастанию
     2.Дана строка. Необходимо подсчитать количество букв А в строке.
