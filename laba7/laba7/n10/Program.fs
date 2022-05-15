@@ -19,6 +19,10 @@ let writeArray arr =
             System.Console.WriteLine( arr.[ind] )
             m2 arr nextind
     m2 arr 0
+let method2 arrStr=
+    let rec m1 (str:string)=
+        List.countBy id (Seq.toList str)
+    arrStr
 [<EntryPoint>]
 let main argv =
     System.Console.WriteLine( "Введите количество строк: " )
@@ -27,5 +31,5 @@ let main argv =
     let arrOfStr = [| for i in 1..num -> System.Convert.ToString(System.Console.ReadLine()) |]
     System.Console.WriteLine( "Введите номер задачи: " )
     let n = System.Convert.ToInt32(System.Console.ReadLine())
-    writeArray(method1 arrOfStr)
+    writeArray(method2 arrOfStr)
     0
